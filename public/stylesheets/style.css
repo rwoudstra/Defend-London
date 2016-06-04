@@ -1,0 +1,737 @@
+*{
+  box-sizing:border-box;
+}
+canvas{
+  margin:0 auto;
+  width:1280px;
+  height:720px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-top:-360px;
+  margin-left:-640px;
+}
+.background {
+  background: #111;
+  background-size: cover;
+  width:100vw;
+  height:100vh;
+  position: absolute;
+  z-index: -1;
+}
+.backgroundMobile {
+  background: #111;
+  background-size: 100% 100%;
+}
+.spinnerContainer {
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  position:absolute;
+  background:#8DA77D ;
+  z-index: -2;
+  top:0;
+  left:0;
+}
+.spinner {
+  background: url("images/spinner-bg.png");
+  width:1920px;
+  height:1920px;
+  z-index: -3;
+  position: relative;
+  top: -650px;
+  left: 50%;
+  margin-left: -960px;
+}
+
+.spinner {
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration:30s;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-timing-function:linear;
+  -moz-animation-name: rotate;
+  -moz-animation-duration:30s;
+  -moz-animation-iteration-count:infinite;
+  -moz-animation-timing-function:linear;
+}
+
+@-webkit-keyframes rotate {
+  from {-webkit-transform:rotate(0deg);}
+  to {  -webkit-transform:rotate(360deg);}
+}
+
+@-moz-keyframes rotate {
+  from {-moz-transform:rotate(0deg);}
+  to {  -moz-transform:rotate(360deg);}
+}
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  margin:0;
+  background:#222;
+}
+
+.window{
+  width:800px;
+  margin:0 auto;
+  padding-top:30px;
+}
+.logoBig {
+  color: #FFF;
+  font-family: 'Black Ops One';
+  text-align: center;
+  font-size: 4rem;
+  margin:0 auto;
+  padding-top:30px;
+}
+
+/*IntroScreen*/
+.logo{
+  background: url("images/monkey_escape_logo.png");
+  width:500px;
+  height:300px;
+  margin:0 auto;
+  z-index: 1;
+  position: relative;
+}
+
+#createButton{
+  width:200px;
+  height:193px;
+  background:url('images/start.png');
+  margin:-50px auto;
+  cursor:pointer;
+  z-index: 0;
+}
+
+#createButton:hover {
+  -webkit-animation-name: shake;
+  -webkit-animation-duration:3s;
+}
+
+@-webkit-keyframes shake {
+0%  {transform: rotate(0deg);}
+15% {transform: rotate(15deg);}
+30% {transform: rotate(0deg);}
+50% {transform: rotate(10deg);}
+100% {transform: rotate(0deg);}
+}
+
+
+
+.clickStart{
+  width:200px;
+  height:135px;
+  background:url('images/click_start.png');
+  margin-top:-100px;
+  margin-left:550px;
+}
+footer{
+  font-family: 'Black Ops One', cursive;
+  color:rgba(255,255,255,0.8);
+  text-align:center;
+  font-size:1.3em;
+  position: absolute;
+  bottom:10px;
+  left:50%;
+  margin-left:-400px;
+  width:800px;
+}
+footer > a{
+  color:rgba(255,255,255,0.8);
+  text-decoration:none;
+}
+footer > a:hover{
+  color:rgba(255,255,255,1);
+}
+
+/*HighscoresScreen*/
+.highscores {
+  font-family: 'Black Ops One';
+  background: url('images/paper.png');
+  background-size: 100% 100%; cover;
+  width: 75%;
+  height: 450px;
+  margin: 0 auto;
+}
+
+.highscores h1 {
+  font-family: 'Black Ops One';
+  color: #5b4014;
+  font-size: 3em;
+  font-weight: normal;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.highscores h2 {
+  font-family: 'Black Ops One';
+  color: #5b4014;
+  font-size: 2em;
+  font-weight: normal;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.highscores h3 {
+  font-family: 'Black Ops One';
+  color: #5b4014;
+  font-size: 1.5em;
+  font-weight: normal;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.highscoreTable {
+  min-width: 200px;
+  margin:20px auto;
+  font-size: 1.5em;
+  color: #5b4014;
+}
+.tdPadding {
+  padding-right: 20px;
+}
+
+.metal {
+  background:
+  radial-gradient(black 15%, transparent 16%) 0 0,
+  radial-gradient(black 15%, transparent 16%) 8px 8px,
+  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+  background-color:#282828;
+  background-size:16px 16px;
+}
+
+/*LobbyDesktop*/
+.instructions {
+  font-family: 'Black Ops One';
+  min-height:300px;
+  width: 75%;
+  margin: 20px auto;
+  padding:40px;
+  border-radius: 10px;
+}
+.phone {
+  width:200px;
+  height:360px;
+  margin-left:70px;
+  margin-top:70px;
+  float: left;
+  background: url('images/phone.png');
+}
+.instructionContent {
+  float: left;
+  width:380px;
+  margin-top:70px;
+  margin-left:40px;
+  padding-bottom: 20px;
+}
+.instructionContent h2 {
+  width:100%;
+  margin:0;
+  font-size: 2em;
+  color:#5b4013;
+  border-bottom:3px solid #77563e;
+}
+.instructionContent h3 {
+  width:100%;
+  margin:5px 0;
+  font-size: 1.2em;
+  color:#644022;
+}
+.players {
+  float: left;
+  width:380px;
+  margin-left:40px;
+  padding-bottom: 20px;
+}
+.players h2 {
+  width:100%;
+  margin:0;
+  font-size: 1.5em;
+  color:#5b4013;
+  border-bottom:3px solid #77563e;
+}
+.url{
+  font-size:1.6em;
+  width:70%;
+  margin-left:30px;
+  color:#5b4013;
+}
+#gameCode{
+  font-size:2.5em;
+  width:50%;
+  margin-left:30px;
+  color:#5b4013;
+}
+#playersWaiting{
+  width:100%;
+  margin:0;
+  font-size: 1.2em;
+  margin-top: 12px;
+  color:#644022;
+}
+/* loading screen desktop*/
+.loadingContainer {
+  font-family: 'Black Ops One';
+  background: url('images/paper.png');
+  background-size: 100% 100%; cover;
+  width: 100%;
+  height: 550px;
+  margin: 50px auto 0;
+
+}
+.loadingContainer > h2 {
+  color: #FFF;
+  font-size: 3.0em;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom:0;
+  margin-top:-40px;
+}
+.loadingContainer > h3 {
+  color: #999;
+  font-size: 1.5em;
+  text-align: center;
+  padding-top: 10px;
+  margin-top:-40px;
+}
+.loadingContainer > span {
+  display:block;
+  width:650px;
+  height:40px;
+  margin:0 auto;
+}
+.playerName {
+  width:50%;
+  float:left;
+  text-align: center;
+  font-size: 1.8em;
+  color: #FFF;
+}
+.controllerInstructions {
+  background: url('images/controllerInstructions.png');
+  width:650px;
+  height:200px;
+  margin:0 auto;
+}
+progress {
+  display: block;
+  width:650px;
+  height:10px;
+  margin:0 auto;
+  margin-top:20px;
+}
+progress, progress[role] {
+
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+  border: none;
+
+}
+progress[role]:after {
+	background:#876532;
+}
+
+/* Ensure fallback text doesn't appear in polyfill */
+progress[role] strong {
+	display: none;
+}
+progress,                          /* Firefox  */
+progress[role][aria-valuenow] {    /* Polyfill */
+   background: #999 !important; /* !important is needed by the polyfill */
+}
+progress::-webkit-progress-bar {
+    background: #999;
+}
+progress {
+    color: #FFF;
+}
+progress::-moz-progress-bar {
+    background: #999;
+}
+progress::-webkit-progress-value {
+    background: #FFF;
+}
+progress[aria-valuenow]:before  {
+    background: #FFF;
+}
+/*lobbyMobile*/
+#gameLobbyMobile {
+  height:100%;
+  min-height:600px;
+  padding-top:60px;
+}
+.logoSmall{
+  width:250px;
+  height:120px;
+  margin:0 auto;
+  color: #FFF;
+  font-family: 'Black Ops One';
+  font-size: 3rem;
+  text-align: center;
+}
+
+.inputFields{
+  width:250px;
+  margin:10px auto;
+}
+label{
+  width:300px;
+  text-align:center;
+  padding-top:20px;
+  font-family: 'Handlee', cursive;
+  font-size:2em;
+  color:rgba(255,255,255,0.8);
+  display: block;
+}
+input{
+  width:250px;
+  height:68px;
+  margin:15px auto;
+  margin-bottom:3%;
+  border:none;
+  font-family: 'Black Ops One';
+  padding-top:15px;
+  text-align:center;
+  color: #FFF;
+  font-size:2em;
+  outline:none;
+}
+#inputGameId {
+  border: 2px #FFF dashed;
+  background: transparent;
+}
+#inputPlayerName {
+  border: 2px #FFF dashed;
+  background: transparent;
+}
+#joinGame{
+  width:250px;
+  height:80px;
+  margin:0 auto;
+  margin-bottom:30px;
+  color:#FFF;
+  text-align: center;
+  padding-top:18px;
+  font-size: 2.3em;
+  font-family: 'Black Ops One';
+  background:
+  radial-gradient(black 15%, transparent 16%) 0 0,
+  radial-gradient(black 15%, transparent 16%) 8px 8px,
+  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+  background-color:#282828;
+  background-size:16px 16px;
+}
+/*styling placeholders*/
+::-webkit-input-placeholder {
+  color:#999;
+  font-size:0.8em;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color:#999;
+  font-size:0.8em;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+  color:#999;
+  font-size:0.8em;
+}
+:-ms-input-placeholder {
+  color:#999;
+  font-size:0.8em;
+}
+/*Phonetroller*/
+.rotate{
+  width:100vw;
+  height:100vh;
+  position: fixed;
+  z-index: 999;
+  top:0;
+  left:0;
+  background: #222;
+  background-size: 100% 100%;
+
+}
+.rotateImg{
+  width:160px;
+  margin:80px auto;
+  height:142px;
+  background:url('images/rotate.png');
+}
+
+.rotateText{
+  width: 100%;
+  color: #FFF;
+  font-family: 'Black Ops One';
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+/*paddle rechts button*/
+.paddleRight {
+  width:120px;
+  height: 100px;
+  float: right;
+}
+
+.paddleLeft {
+  width: 120px;
+  height: 100px;
+  float: right;
+  position: absolute;
+  right: 25px;
+  top: 142px;
+}
+
+.paddleRight .inner {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: url('images/arrowup.png') no-repeat;
+	background-position: center center;
+}
+
+.paddleLeft .inner {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: url('images/arrowdown.png') no-repeat;
+	background-position: center center;
+}
+
+.bomb {
+  width: calc(100% - 150px);
+  height:100%;
+  float: left;
+}
+
+.bomb .inner {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: url('images/bomb.png') no-repeat;
+	background-position: center center;
+}
+
+
+.turretRight {
+  width:120px;
+  height: 100px;
+  float: right;
+}
+
+.turretLeft {
+  width: 120px;
+  height: 100px;
+  float: right;
+  position: absolute;
+  right: 25px;
+  top: 142px;
+}
+
+.turretRight .inner {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: url('images/arrowup.png') no-repeat;
+	background-position: center center;
+	-webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.turretLeft .inner {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: url('images/arrowdown.png') no-repeat;
+	background-position: center center;
+	-webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.turret {
+  width: calc(100% - 150px);
+  height:100%;
+  float: left;
+}
+
+.turret .inner {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: url('images/turret.png') no-repeat;
+	background-position: center center;
+}
+
+@media all and (orientation:portrait) {
+    .rotatePhonetroller{display:block;}/*terug zetten naar block!*/
+}
+@media all and (orientation:landscape) {
+  .rotatePhonetroller{display:none;}
+}
+#phonetroller{
+  position: relative;
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  -khtml-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+}
+#controllerPlayerOne{
+  width:100vw;
+  height:100vh;
+  overflow: hidden;
+}
+#controllerPlayerTwo{
+  width:100vw;
+  height:100vh;
+  overflow: hidden;
+}
+.innerContainer {
+  width:90vw;
+  height:83vh;
+  margin: 7vh 5vw 10vh;
+  padding: 25px;
+  position:relative;
+}
+.controllerLogo{
+  width:100%;
+  position: absolute;
+  left: 0;
+  bottom: 11vh;
+  pointer-events: none;
+}
+.controllerLogoOne{
+    background:url('images/logo.png');
+    width:245px;
+    height:53px;
+    margin:0 auto;
+}
+.controllerLogoTwo{
+    background:url('images/logojoypad.png');
+    width:245px;
+    height:53px;
+    margin:0 auto;
+}
+.joypad {
+		border-radius: 100%;
+		background:#FFF;
+		width:200px;
+		height:200px;
+    background: url('images/joyground.png');
+    float: left;
+}
+#joystick {
+		width:130px;
+		height:130px;
+		background:#5b3a31;
+		border-radius: 100%;
+		border:1px solid #492c25;
+		position: relative;
+		top:35px;
+		left:35px;
+}
+.throwButton {
+  width:180px;
+  height:180px;
+  margin-top:10px;
+  float:right;
+  background: url('images/gooi.png')
+}
+#gameArea {
+
+  background:#222;
+}
+
+/*Temporary code screen - delete after test*/
+
+.monkeyRight {
+  height:600px;
+  width:485px;
+  position: fixed;
+  right:-70px;
+  bottom:10px;
+  background: url('images/monkeybrown.png');
+  z-index: 2;
+}
+.extraLeft {
+  left:-150px !important;
+}
+.extraRight {
+  right:-150px !important;
+}
+.monkeyLeft {
+  height:600px;
+  width:485px;
+  position: fixed;
+  left:-50px;
+  bottom:10px;
+  background: url('images/monkeyyellow.png');
+  z-index: 2;
+}
+.addressIcon {
+  width:65px;
+  height:75px;
+  background:url('images/addressicon.png');
+  background-size:100% 100%;
+  margin:20px auto 0;
+
+}
+.inputIcon {
+  width:65px;
+  height:65px;
+  background:url('images/inputicon.png');
+  background-size:100% 100%;
+  margin:20px auto 0;
+
+}
+.temp_logo {
+  background:url('images/logoMobile.png');
+  width:250px;
+  height:120px;
+  margin:40px auto 10px;
+}
+.instructionsText {
+  font-family: 'Black Ops One';
+  color: #FFF;
+  font-size: 1.6em;
+  font-weight: normal;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 0px;
+}
+.tempspan{
+  color: #999;
+  font-size: 1.1em;
+}
+.temp_code {
+  font-family: 'Black Ops One';
+  color: #999 !important;
+
+  text-align: center;
+  width:40% !important;
+  margin-left:30% !important;
+  font-size: 3em !important;
+
+}
+
+.arial {
+  font-family: arial;
+}
+#highscoreOneScore,#highscoreTwoScore,#highscoreThreeScore {
+  text-align: right;
+}

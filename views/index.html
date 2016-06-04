@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>DefendLondon </title>
+  <link rel="stylesheet" href="../stylesheets/style.css"/>
+  <link href='http://fonts.googleapis.com/css?family=Candal' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
+  <meta name="viewport" user-scalable=no width=device-width content="initial-scale=1, maximum-scale=1">
+  <!-- jQuery! -->
+  <script src="javascripts/cookies.js"></script>
+  <script src="javascripts/vendor/jquery-2.0.2.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script>
+    var offset;
+  </script>
+
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="assets/monkeyEscape/music.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>
+    <div class="background" style="display: none;"></div>
+    <div class="backgroundMobile" style="display: none;"></div>
+    <div class="window" id="introScreen" style="display: none;">
+        <div class="logoBig"></div>
+        <div class='logo'></div>
+        <div id='createButton'></div>
+    </div>
+    <div class="window" id="highscoresScreen" style="display: none;">
+      <div class='logoSmall'></div>
+        <div class="highscores">
+          <h1>Highscores</h1>
+          <table border="0" class="highscoreTable">
+            <tr>
+              <td class="tdPadding" id="highscoreOneNames">Tim & Gerben</td>
+              <td id="highscoreOneScore">3209</td>
+            </tr>
+            <tr>
+              <td class="tdPadding" id="highscoreTwoNames">Robin & Paula</td>
+              <td id="highscoreTwoScore">2987</td>
+            </tr>
+            <tr>
+              <td class="tdPadding" id="highscoreThreeNames">JJ & Olga</td>
+              <td id="highscoreThreeScore">2674</td>
+            </tr>
+          </table>
+          <h2>Play Again?</h2>
+          <h3>Tap any button on your phone</h3>
+
+          <h2><span id="timer">15</span> Seconds</h2>
+          <div class="monkeyLeft"></div>
+          <div class="monkeyRight"></div>
+        </div>
+    </div>
+    <!-- temorary div -->
+    <div class="window" id="gameLobbyDesktop" style="display: none;">
+        <div class="logoBig">DefendLondon</div>
+        <div class='instructions metal'>
+           <div class="instructionsText">
+             Go to <span class="tempspan">0.0.0.0:3000</span> on your mobile
+           </div>
+           <div class="instructionsText">
+             Enter the following code:
+           </div>
+           <div id="gameCode" class="temp_code">3502</div>
+           <div class="instructionsText">
+             <span id="temp_num">0 </span><span class="arial"> / </span> 2 Players connected
+           </div>
+           
+        </div>
+    </div>
+    <div class="window" id="loadingScreen" style="display: none;">
+
+        <div class="loadingContainer">
+            <h2>The Blitz</h2>
+            <h3>The Blitz, from the German word for 'lightning', was the name applied by the British press to the heavy and frequent bombing raids carried out over Britain in 1940 and 1941, during the Second World War.</h3>
+            <span>
+              <div class="playerName" id="p1">Player 1</div>
+              <div class="playerName" id="p2">Player 2</div>
+            </span>
+            <!--<div class="controllerInstructions"></div>-->
+            <progress id="loadingBar" max="100" value="0"></progress>
+        </div>
+    </div>
+    <div id="gameArea" style="display: none;"></div>
+    <div id="gameLobbyMobile" class='backgroundMobile' style="display: none;">
+        <div class='logoSmall'>Defend<br>London</div>
+        <div class='inputFields'>
+          <input name='inputCode' type="number" value="" id="inputGameId" placeholder='Code'/>
+          <input name='inputName' maxlength='8' value="" type='text' id='inputPlayerName' placeholder='Name'/>
+        </div>
+        <br/>
+        <div id='joinGame'>Join</div>
+    </div>
+    <div id="phonetroller" class="backgroundMobile" style="display: none;">
+        <div class='rotate rotatePhonetroller'>
+          <div class="rotateImg"></div>
+          <div class="rotateText">Please rotate device</div>
+        </div>
+        <div id="controllerPlayerOne" style="display:none;">
+          <div class="innerContainer">
+
+            <div id="button1" class="btn paddleLeft metal" onTouchStart="navigator.vibrate(25);"><div class="inner"></div></div>
+            <div id="button2" class="btn paddleRight metal" onTouchStart="navigator.vibrate(25);"><div class="inner"></div></div>
+			<div id="button3" class="btn bomb metal" onTouchStart="navigator.vibrate(300);"><div class="inner"></div></div>
+			
+          </div>
+        </div>
+        <div id="controllerPlayerTwo"  style="display:none;" >
+            <div class="innerContainer">
+              <div id="button4" class="btn turretLeft metal" onTouchStart="navigator.vibrate(25);"><div class="inner"></div></div>
+			  <div id="button5" class="btn turretRight metal" onTouchStart="navigator.vibrate(25);"><div class="inner"></div></div>
+			  <div id="button6" class="btn turret metal" onTouchStart="navigator.vibrate(200);"><div class="inner"></div></div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- load fastclick -->
+    <script src="javascripts/vendor/fastclick.js"></script>
+
+    <!-- load socket.io file -->
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- load framework js file -->
+    <script src="javascripts/gamenuts.js"></script>
+
+
+    <!-- load joystick file -->
+    <script src="javascripts/joystick.js"></script>
+
+    <!-- load phonetroller file -->
+    <script src="javascripts/phonetroller.js"></script>
+
+    <!-- load phaser and demo game -->
+    <script src="javascripts/vendor/phaser.min.js"></script>
+    <script src="javascripts/defendLondon.js"></script>
+
+  </body>
+</html>
