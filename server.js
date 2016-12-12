@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname,'public')));
 app.use(express.static(path.join(__dirname,'views')));
 console.log("Getting HTML and CSS");
 // Create a Node.js based http server on port 80 (or 3000 for local testing)
-var server = require('http').createServer(app).listen(80);
+var server = require('http').createServer(app).listen(3000);
 
 // Create a Socket.IO server and attach it to the http server
 var io = require('socket.io').listen(server);
