@@ -4,12 +4,12 @@ var app = express();
 var game = require('./game');
 
 // Turn down the logging activity
-app.use(express.logger('dev'));
+// app.use(express.logger('dev'));
 
 // Serve static html, js, css, and image files from the 'public' directory
 app.use(express.static(path.join(__dirname,'public')));
 app.use(express.static(path.join(__dirname,'views')));
-
+console.log("Getting HTML and CSS");
 // Create a Node.js based http server on port 80 (or 3000 for local testing)
 var server = require('http').createServer(app).listen(80);
 
